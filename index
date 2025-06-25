@@ -1,0 +1,69 @@
+{
+  "appName": "WorkFlow Pro",
+  "user": {
+    "name": "Alex Johnson",
+    "role": "Software Intern",
+    "status": "Clocked In"
+  },
+  "ui": {
+    "sidebar": {
+      "-component": "VerticalNav",
+      "items": [
+        // No changes to sidebar items, they are standard and effective.
+      ]
+    },
+    "header": {
+      "-component": "MainHeader",
+      "elements": [
+        // Updated "Cmd+K" command palette for power users.
+        {"type": "CommandPalette", "placeholder": "Search or type a command (Cmd+K)"},
+        {"type": "Button", "label": "Clock Out", "isActive": true},
+        {"type": "Icon", "name": "Notifications"},
+        {"type": "Avatar", "user": "Alex Johnson"}
+      ]
+    },
+    "dashboard": {
+      "-component": "CustomizableDashboardView",
+      // AI summary is more proactive and integrated.
+      "aiSummary": "Morning, Alex! You're on track with your weekly hours. Focus today: 'Implement user authentication'. The team is waiting on your pull request review to unblock their next sprint.",
+      "widgets": [
+        {
+          // New: Link daily tasks to strategic company goals (OKRs).
+          "-widget": "OkrProgressCard",
+          "title": "Team Goal: Q2-2025 Launch",
+          "objective": "Launch New Analytics Module",
+          "keyResult": "Achieve 90% code coverage on API tests",
+          "progress": 65,
+          "linkedTasks": 4
+        },
+        {
+          // Updated: A combined, more actionable task list.
+          "-widget": "FocusTaskList",
+          "title": "My Focus for Today",
+          "tasks": [
+            {"name": "Implement user authentication", "due": "today", "status": "In Progress", "blockerFor": "Jessica T."},
+            {"name": "Review pull requests from Michael", "due": "in 2 days", "status": "Pending", "priority": "High"}
+          ]
+        },
+        {
+          // Updated: Activity feed is now interactive with mentions and threads.
+          "-widget": "CollaborativeActivityFeed",
+          "title": "Team Feed",
+          "activities": [
+            {"user": "Jessica Taylor", "action": "Hey @Alex Johnson, any updates on the analytics dashboard task?", "timestamp": "5m ago", "hasThread": true},
+            {"user": "Michael Rodriguez", "action": "Merged pull request #42.", "timestamp": "3h ago"}
+          ]
+        },
+        {
+          // Updated: Stat cards now show trends and insights.
+          "-widget": "PerformanceTrendCard",
+          "title": "Weekly Task Velocity",
+          "value": "13 Tasks Completed",
+          "trend": "+2 from last week",
+          "insight": "On track to exceed monthly goal."
+        }
+        // The separate AI chat box is replaced by integrated AI suggestions and the command palette.
+      ]
+    }
+  }
+}
